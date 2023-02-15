@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Pranav Natarajan">
+
+<title>Tracking Data Project</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="DataProject_files/libs/clipboard/clipboard.min.js"></script>
+<script src="DataProject_files/libs/quarto-html/quarto.js"></script>
+<script src="DataProject_files/libs/quarto-html/popper.min.js"></script>
+<script src="DataProject_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="DataProject_files/libs/quarto-html/anchor.min.js"></script>
+<link href="DataProject_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="DataProject_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="DataProject_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="DataProject_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="DataProject_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tracking Data Project</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Pranav Natarajan </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="environment-instantiation" class="level2">
+<h2 class="anchored" data-anchor-id="environment-instantiation">Environment Instantiation</h2>
+<p>I begin by loading required packages onto the Quarto Working Instance using the <code>library()</code> command. It will throw an error if these packages are not installed on the instance, after which you may run <code>install.packages("&lt;package_name&gt;")</code> to install and run the command again.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading required packages onto working instance</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="local-sqlite3-connection" class="level2">
+<h2 class="anchored" data-anchor-id="local-sqlite3-connection">Local SQLite3 Connection</h2>
+<p>I then create a local <code>SQLite3</code> connection. It is on temporary memory, so it will lose all data tables in its schema if they not saved to external sources before the session is closed. For this project I choose to use <code>SQLite3</code> in the interest of time and laptop computation constraints.</p>
+<p>I will create the database, called <strong>TD</strong> for this project to host all these data tables in local memory</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create the database connection, in local memory</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>TD<span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="st">"TD.sqlite"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="loading-event-and-player-location-data" class="level2">
+<h2 class="anchored" data-anchor-id="loading-event-and-player-location-data">Loading Event and Player Location Data</h2>
+<p>I first create the table schemas, and append the data into them using the <code>dbWriteTable()</code> function directly into our <strong>TD</strong> Database.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- creating the table schemas</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">-- for the events table</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> <span class="kw">events</span>(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>GameEventID <span class="dt">VARCHAR</span>(<span class="dv">15</span>) <span class="kw">PRIMARY</span> <span class="kw">KEY</span> <span class="kw">NOT</span> <span class="kw">NULL</span>, </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>GameID <span class="dt">VARCHAR</span>(<span class="dv">15</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Period <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>GameClock <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>BallX <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>BallY <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,  </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>EventPlayerID <span class="dt">VARCHAR</span>(<span class="dv">15</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>PassOutcome <span class="dt">VARCHAR</span>(<span class="dv">15</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>EventPlayerSpeed <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>IsPossGoal <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>IsNextPossGoal <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- player_locations table</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">-- Note that by design</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">-- we can create a primary key tuple of PlayerID and GameEventID,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- as well as create a foreign key reference to events.GameEventID</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> player_locations(</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>GameEventID <span class="dt">VARCHAR</span>(<span class="dv">15</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>IsHome <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>IsTM <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>IsePlayer <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>PlayerID <span class="dt">VARCHAR</span>(<span class="dv">15</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>PlayerX <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>PlayerY <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>BallX <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>BallY <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">PRIMARY</span> <span class="kw">KEY</span>(GameEventID, PlayerID),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="kw">FOREIGN</span> <span class="kw">KEY</span>(GameEventID) <span class="kw">REFERENCES</span> <span class="kw">events</span>(GameEventID)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(<span class="at">conn=</span>TD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "events"           "player_locations"</code></pre>
+</div>
+</div>
+<p>Now, we load the csv file data into the created tables</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>RSQLite<span class="sc">::</span><span class="fu">dbWriteTable</span>(<span class="at">conn=</span>TD,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">name=</span><span class="st">"events"</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">value=</span><span class="st">"RapidsDataAnalyticsChallenge_Events.csv"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">sep=</span><span class="st">","</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">overwrite=</span>F,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">append=</span>T,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">header=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(<span class="at">conn=</span>TD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "events"           "player_locations"</code></pre>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<p>Inspecting the Table import,</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>PRAGMA table_info(<span class="kw">events</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="knitsql-table">
+<table class="table table-sm table-striped">
+<caption>Displaying records 1 - 10</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">cid</th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">type</th>
+<th style="text-align: right;">notnull</th>
+<th style="text-align: left;">dflt_value</th>
+<th style="text-align: right;">pk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">GameEventID</td>
+<td style="text-align: left;">VARCHAR(15)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">GameID</td>
+<td style="text-align: left;">VARCHAR(15)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Period</td>
+<td style="text-align: left;">INTEGER</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">GameClock</td>
+<td style="text-align: left;">DOUBLE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">BallX</td>
+<td style="text-align: left;">DOUBLE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">BallY</td>
+<td style="text-align: left;">DOUBLE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">EventPlayerID</td>
+<td style="text-align: left;">VARCHAR(15)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">PassOutcome</td>
+<td style="text-align: left;">VARCHAR(15)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">EventPlayerSpeed</td>
+<td style="text-align: left;">DOUBLE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">IsPossGoal</td>
+<td style="text-align: left;">INTEGER</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Now, I load the player location data associated with each event.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>RSQLite<span class="sc">::</span><span class="fu">dbWriteTable</span>(<span class="at">conn=</span>TD,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">name=</span><span class="st">"player_locations"</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">value=</span><span class="st">"RapidsDataAnalyticsChallenge_PlayerLocations.csv"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">sep=</span><span class="st">","</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">overwrite=</span>F,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">append=</span>T,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">header=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And inspecting the player_locations table import…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>PRAGMA table_info(player_locations);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="knitsql-table">
+<table class="table table-sm table-striped">
+<caption>9 records</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">cid</th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">type</th>
+<th style="text-align: right;">notnull</th>
+<th style="text-align: left;">dflt_value</th>
+<th style="text-align: right;">pk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">GameEventID</td>
+<td style="text-align: left;">VARCHAR(15)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">IsHome</td>
+<td style="text-align: left;">INTEGER</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">IsTM</td>
+<td style="text-align: left;">INTEGER</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">IsePlayer</td>
+<td style="text-align: left;">INTEGER</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">PlayerID</td>
+<td style="text-align: left;">VARCHAR(15)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">PlayerX</td>
+<td style="text-align: left;">DOUBLE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">PlayerY</td>
+<td style="text-align: left;">DOUBLE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">BallX</td>
+<td style="text-align: left;">DOUBLE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">BallY</td>
+<td style="text-align: left;">DOUBLE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>It seems to be as-created.</p>
+</section>
+<section id="exploratory-data-analysis-quick" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis-quick">Exploratory Data Analysis (Quick)</h2>
+<p>Now, we need to check the counts of each game event. We note that there are 220 events which do not capture locations of all 22 players.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reading in player_locations and events data</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># player_locations_df&lt;- read.csv(file="RapidsDataAnalyticsChallenge_PlayerLocations.csv", </span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                             header=T)</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>player_locations_df<span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(<span class="at">conn=</span>TD, <span class="at">statement =</span> <span class="st">"SELECT * FROM player_locations"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>events_df<span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(<span class="at">conn=</span>TD, <span class="at">statement =</span> <span class="st">"SELECT * FROM events"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> incomplete_events <span class="kw">AS</span> (<span class="kw">SELECT</span> GameEventID, <span class="fu">COUNT</span>(GameEventID) <span class="kw">as</span> n</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> player_locations</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> GameEventID</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> n <span class="op">&lt;&gt;</span> <span class="dv">22</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> n <span class="kw">ASC</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> n, <span class="fu">COUNT</span>(n) <span class="kw">as</span> <span class="ot">"num_incomplete_events"</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> incomplete_events</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> n;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="knitsql-table">
+<table class="table table-sm table-striped">
+<caption>2 records</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">n</th>
+<th style="text-align: right;">num_incomplete_events</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">20</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">21</td>
+<td style="text-align: right;">195</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Since we miss at most 2 players, and in most cases only one player, we can assume that there were red cards handed out in the match/player was off the field for injury and not impacting play at the moment of the event.</p>
+<p>We will check the number of NAs blanks if they exist, and what the values are by column.</p>
+<p>[I have loaded in the CSVs in R as well with the format <code>&lt;table_name&gt;_df</code>, to show competency in R for this step.]</p>
+<p>So, for the event IDs…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">is.na</span>(events_df))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+FALSE 
+39028 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(events_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> GameEventID           GameID              Period        GameClock     
+ Length:3548        Length:3548        Min.   :1.000   Min.   :   8.0  
+ Class :character   Class :character   1st Qu.:1.000   1st Qu.: 742.5  
+ Mode  :character   Mode  :character   Median :2.000   Median :1512.2  
+                                       Mean   :1.539   Mean   :1490.1  
+                                       3rd Qu.:2.000   3rd Qu.:2212.5  
+                                       Max.   :2.000   Max.   :3513.0  
+     BallX           BallY       EventPlayerID      PassOutcome       
+ Min.   :20.01   Min.   :0.000   Length:3548        Length:3548       
+ 1st Qu.:22.26   1st Qu.:1.320   Class :character   Class :character  
+ Median :24.54   Median :2.580   Mode  :character   Mode  :character  
+ Mean   :24.69   Mean   :2.565                                        
+ 3rd Qu.:27.12   3rd Qu.:3.850                                        
+ Max.   :29.99   Max.   :4.990                                        
+ EventPlayerSpeed   IsPossGoal      IsNextPossGoal  
+ Min.   :0.020    Min.   :0.00000   Min.   :0.0000  
+ 1st Qu.:1.710    1st Qu.:0.00000   1st Qu.:0.0000  
+ Median :2.896    Median :0.00000   Median :0.0000  
+ Mean   :3.089    Mean   :0.06905   Mean   :0.0279  
+ 3rd Qu.:4.286    3rd Qu.:0.00000   3rd Qu.:0.0000  
+ Max.   :8.343    Max.   :1.00000   Max.   :1.0000  </code></pre>
+</div>
+</div>
+<p>There are no missing values</p>
+<p>For the player locations…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">is.na</span>(player_locations_df))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ FALSE 
+700299 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(player_locations_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> GameEventID            IsHome            IsTM          IsePlayer     
+ Length:77811       Min.   :0.0000   Min.   :0.0000   Min.   :0.0000  
+ Class :character   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.0000  
+ Mode  :character   Median :1.0000   Median :1.0000   Median :0.0000  
+                    Mean   :0.5003   Mean   :0.5007   Mean   :0.0456  
+                    3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:0.0000  
+                    Max.   :1.0000   Max.   :1.0000   Max.   :1.0000  
+   PlayerID            PlayerX          PlayerY              BallX       
+ Length:77811       Min.   :-55.99   Min.   :-40.45000   Min.   :-51.68  
+ Class :character   1st Qu.: 12.72   1st Qu.: -6.40000   1st Qu.: 22.41  
+ Mode  :character   Median : 26.36   Median : -0.02000   Median : 25.08  
+                    Mean   : 21.87   Mean   :  0.00236   Mean   : 25.03  
+                    3rd Qu.: 34.04   3rd Qu.:  6.39000   3rd Qu.: 27.88  
+                    Max.   : 56.10   Max.   : 38.72000   Max.   : 57.05  
+     BallY          
+ Min.   :-34.57000  
+ 1st Qu.: -3.24000  
+ Median : -0.14000  
+ Mean   : -0.05903  
+ 3rd Qu.:  2.96000  
+ Max.   : 33.80000  </code></pre>
+</div>
+</div>
+<p>Note that the Ranges of <code>ballX</code> and <code>ballY</code> differ between these datasets. Judging from the ranges of these ball locations in the events data (<code>ballX</code> <span class="math inline">\(\in\)</span> [20.01, 29.99], <code>ballX</code> <span class="math inline">\(\in\)</span> [0, 4.99]), we see that the passes are supposedly only played from the middle third of the pitch in central/right-central areas.</p>
+<p>Moreover, the ball location ranges in the <code>player_locations</code> dataset show a wider range, allowing us to assume that the locations in the events data are pass originations, and the locations in the player_locations dataset are the destinations.</p>
+<p>Now, I note that there are issues with the player and ball locations Y-coordinates not being reflected right between the datasets.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Obtaining the number of misreflected events,</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">-- and coordinate count that was misreflected</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> T1 <span class="kw">AS</span> (<span class="kw">SELECT</span> P.GameEventID, P.IsePlayer, </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>P.PlayerX, P.PlayerY, P.BallX <span class="kw">as</span> <span class="ot">"P.BallX"</span>, P.BallY <span class="kw">as</span> <span class="ot">"P.BallY"</span>,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>E.BallX <span class="kw">as</span> <span class="ot">"E.BallX"</span>, E.BallY <span class="kw">as</span> <span class="ot">"E.BallY"</span>,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ABS</span>(P.PlayerX <span class="op">-</span> E.BallX) <span class="kw">as</span> <span class="ot">"diffBallX"</span>, </span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ABS</span>(P.PlayerY <span class="op">-</span> E.BallY) <span class="kw">as</span> <span class="ot">"diffBallY"</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> player_locations P <span class="kw">JOIN</span> <span class="kw">events</span> E <span class="kw">ON</span> P.GameEventID <span class="op">=</span> E.GameEventID</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> IsePlayer <span class="op">=</span> <span class="dv">1</span> <span class="kw">AND</span> (diffBallX <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">OR</span> diffBallY <span class="op">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> P.GameEventID <span class="kw">ASC</span>)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co">-- number of events misreflected (Note all misreflections in the Y column)</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> <span class="ot">"num_events_misreflected"</span>,</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> diffBallX <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span>) <span class="kw">AS</span> <span class="ot">"num_X_misreflected"</span>,</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> diffBallY <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span>) <span class="kw">AS</span> <span class="ot">"num_Y_misreflected"</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> T1;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="knitsql-table">
+<table class="table table-sm table-striped">
+<caption>1 records</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">num_events_misreflected</th>
+<th style="text-align: right;">num_X_misreflected</th>
+<th style="text-align: right;">num_Y_misreflected</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1773</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1773</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>1773 erroneous ball locations of 3548 events in all is a cause of concern.</p>
+<p>However, noting that the <code>PlayerX</code> and <code>PlayerY</code> columns <em>could</em> correspond to the right ball locations (it is still highly improbable that all pass locations originate only in the central midfield zones, and the X coordinates need investigating as well) I will <em>assume</em> them to be the pass origination locations for this project.</p>
+<p>For future debugging reference, I create a table on the database keeping in track these game event IDs which have these misreflections.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Creating Table in Database for future reference </span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">-- of events with discrepancies</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> pass_org_misreflections <span class="kw">AS</span> </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> P.GameEventID, P.IsePlayer, </span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>P.PlayerX, P.PlayerY, P.BallX <span class="kw">as</span> <span class="ot">"P.BallX"</span>, P.BallY <span class="kw">as</span> <span class="ot">"P.BallY"</span>,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>E.BallX <span class="kw">as</span> <span class="ot">"E.BallX"</span>, E.BallY <span class="kw">as</span> <span class="ot">"E.BallY"</span>,</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ABS</span>(P.PlayerX <span class="op">-</span> E.BallX) <span class="kw">as</span> <span class="ot">"diffBallX"</span>, </span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ABS</span>(P.PlayerY <span class="op">-</span> E.BallY) <span class="kw">as</span> <span class="ot">"diffBallY"</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> player_locations P <span class="kw">JOIN</span> <span class="kw">events</span> E <span class="kw">ON</span> P.GameEventID <span class="op">=</span> E.GameEventID</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> IsePlayer <span class="op">=</span> <span class="dv">1</span> <span class="kw">AND</span> (diffBallX <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">OR</span> diffBallY <span class="op">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> P.GameEventID <span class="kw">ASC</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>and again, ensuring that it is saved to the database…</p>
+<div class="cell">
+
+</div>
+<p>Before we begin, we need to include the pass origination coordinates as separate columns in the <code>player_locations</code> dataset to help with our calculations.</p>
+<p>I create a temporary table to ensure a single calculation.</p>
+<p>Note: CTEs can also be used, but I want to reduce the cell execution time and improve reusability of code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TEMPORARY</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> player_locations_with_origin <span class="kw">AS</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> T1 <span class="kw">AS</span>(</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> P.GameEventID, P.PlayerID, P.PlayerX <span class="kw">as</span> OriginX, P.PlayerY <span class="kw">as</span> OriginY</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> player_locations P</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> P.IsePlayer<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> P.GameEventID <span class="kw">ASC</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> P1.<span class="op">*</span>, T1.OriginX, T1.OriginY</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> player_locations P1 <span class="kw">LEFT</span> <span class="kw">JOIN</span> T1 <span class="kw">on</span> P1.GameEventID<span class="op">=</span>T1.GameEventID</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> P1.GameEventID <span class="kw">ASC</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We also need to decide on the pitch dimensions. We explore the Player Location rows which are over the initial suggested bounds suggested for X and Y</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span>(P.GameEventID), P.OriginX, P.OriginY, P.BallX, P.BallY, E.PassOutcome</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> player_locations_with_origin P <span class="kw">JOIN</span> <span class="kw">events</span> E <span class="kw">on</span> P.GameEventID<span class="op">=</span>E.GameEventID</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="fu">ABS</span>(P.PlayerX) <span class="op">&gt;</span> <span class="fl">55.3</span> <span class="kw">OR</span> <span class="fu">ABS</span>(P.PlayerY) <span class="op">&gt;</span> <span class="fl">36.8</span> <span class="kw">OR</span> </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ABS</span>(P.BallX) <span class="op">&gt;</span> <span class="fl">55.3</span> <span class="kw">OR</span> <span class="fu">ABS</span>(P.BallY) <span class="op">&gt;</span> <span class="fl">36.8</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="knitsql-table">
+<table class="table table-sm table-striped">
+<caption>7 records</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">GameEventID</th>
+<th style="text-align: right;">OriginX</th>
+<th style="text-align: right;">OriginY</th>
+<th style="text-align: right;">BallX</th>
+<th style="text-align: right;">BallY</th>
+<th style="text-align: left;">PassOutcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1454816</td>
+<td style="text-align: right;">24.83</td>
+<td style="text-align: right;">-0.59</td>
+<td style="text-align: right;">57.05</td>
+<td style="text-align: right;">5.38</td>
+<td style="text-align: left;">Complete</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1472021</td>
+<td style="text-align: right;">20.92</td>
+<td style="text-align: right;">-2.57</td>
+<td style="text-align: right;">23.27</td>
+<td style="text-align: right;">-5.40</td>
+<td style="text-align: left;">Complete</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1475092</td>
+<td style="text-align: right;">21.74</td>
+<td style="text-align: right;">4.80</td>
+<td style="text-align: right;">20.19</td>
+<td style="text-align: right;">5.87</td>
+<td style="text-align: left;">Complete</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5866927</td>
+<td style="text-align: right;">24.84</td>
+<td style="text-align: right;">-0.74</td>
+<td style="text-align: right;">24.17</td>
+<td style="text-align: right;">-7.72</td>
+<td style="text-align: left;">Complete</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6008965</td>
+<td style="text-align: right;">27.42</td>
+<td style="text-align: right;">2.83</td>
+<td style="text-align: right;">27.17</td>
+<td style="text-align: right;">2.28</td>
+<td style="text-align: left;">Complete</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6312705</td>
+<td style="text-align: right;">28.39</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: left;">Out</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6323246</td>
+<td style="text-align: right;">29.42</td>
+<td style="text-align: right;">-1.56</td>
+<td style="text-align: right;">34.44</td>
+<td style="text-align: right;">-7.26</td>
+<td style="text-align: left;">Complete</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Considering the lower distances that the ball travels in the lagged logging of the player locations, and noting that players could realistically be close to the goaline and wide touchlines, we can assume our X coordinates to be in [-60, 60] and Y coordinates to be in [-41, 41].</p>
+<p>So I assume that the pitch dimensions are <strong>120X82 meters</strong>. This assumption, which is within the FIFA and MLS regulations for pitch sizes allows me to keep these 6 events to perform more complete analyses.</p>
+<p>Now I begin feature Engineering</p>
+</section>
+<section id="feature-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="feature-engineering">Feature Engineering</h2>
+<p>Note that we do not have the data for the type of pass, nor the destination coordinates of the pass, which are usually significant features in an expected assists model. We do, however, have the player location data for each event.</p>
+<p>I look into the location characteristics, analysing player numbers on select zones (from 30 overall) across all thirds of the pitch, as well as understanding the distance and angles they make with respect to goal. I also try understanding the patterns of zonal overloading and player congestion by proximities and plus-minus metrics for zones in the attacking third, correctly identify marked team-mates and potential passing options, where the opponent cannot make an interception easily enough.</p>
+<p>Understanding that these passes are made in the middle-attackikgn third areas of the pitch, make the assumption that we are in the attacking phase, and base my analysis on zones specifically in the attacking third.</p>
+<section id="originx-originy" class="level3">
+<h3 class="anchored" data-anchor-id="originx-originy">1. <code>OriginX, OriginY</code></h3>
+<p>These features are the Event Player’s coordinates for the event. Ideally, an (<code>OriginX</code>, <code>OriginY</code>) value closer to goal or the edges of the box should translate into good assist opportunities.</p>
+</section>
+<section id="location_zone-and-pitch_third" class="level3">
+<h3 class="anchored" data-anchor-id="location_zone-and-pitch_third">2. <code>location_zone</code> and <code>pitch_third</code></h3>
+<p>As I mentioned earlier, I split the whole 120mx82m pitch into 30 zones total (i.e, 10 in every third).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="zones_pic.jpg" class="img-fluid figure-img" alt="Fig1: zones on the pitch (picture not to scale)"></p>
+<p></p><figcaption class="figure-caption">Fig1: zones on the pitch (picture not to scale)</figcaption><p></p>
+</figure>
+</div>
+<p>This <code>location_zone</code> feature contains the zone of origination of the pass, while the <code>pitch_third</code> <span class="math inline">\(\in\)</span> [<code>Defensive 3rd, Middle 3rd, Attacking 3rd</code>] denotes the third of the pitch where the shot is taken from. The <code>location_zone</code> allows to understand vertical as well as horizontal movement within thirds, allowing for deeper analyses and insights to be made.</p>
+<p>Ideally, the zones closer to (or in the) attacking third should give you a better chance at assisting. This zonal analyses also gives us a chance to truly analyse positional overloads (as we will see below, overloads with respect to attacking halfspaces (22 &amp; 24), wide areas (21, 25, 26 &amp; 30), in front of the box (23) and within the box (27, 28 &amp; 29))</p>
+</section>
+<section id="distance_to_goalcentre-and-goalmouth_angle" class="level3">
+<h3 class="anchored" data-anchor-id="distance_to_goalcentre-and-goalmouth_angle">3. <code>distance_to_goalcentre</code> and <code>goalmouth_angle</code></h3>
+<p>Now, I measure the distance from the pass location to the goalcentre. the closer you are to goal, the more that the team has hopefully advanced towards the attacking third and the box, and should result in more of a chance of a pass becoming an assist.</p>
+<p><code>goalmouth_angle</code> <strong>is the angle, in degrees, subtended by the lines from the near and far post to the pass location.</strong> The distance of the lines from pass location to either post are saved in <code>distance_to_near_post</code> and <code>distance_to_far_post</code> respectively.</p>
+<p>a higher goalmouth angle suggests that the player is closer and more square on goal–and that passes from this range should usually result in assists. What is more interesting, however, is the cases where it is of a lower value. This usually means that</p>
+<ol type="1">
+<li>the player is very far from the goal, implying that we might need more than a single pass to convert the current posession into a goal (depending on the number of teammates and opponents ahead of the passer), or</li>
+<li>The player is in wide areas close to the touchline, in prime cutback zones (26, 27, 29, 30). Cutbacks are usually whizzed across the face of goal for any player to simply tap the ball into the goal, implying that the current posession sequence can result in goal.</li>
+<li>The player is very wide areas, looking for early crossing opportunities (zones 21 and 25). This would usually result in a goal provided there is a player in the correct sub-channels (zones 27 and 29) in the box or making the runs from halfspaces (zones 22 &amp; 24) into zone 28.</li>
+</ol>
+<p>In most cases however, <em>when the player has a range of angles in the 20-50 degrees</em>, it usually means that the players are in the most probable assist creating locations of just outside the box (22, 23 &amp; 24), allowing runners around and slightly in front of them on goal.</p>
+<p>This metric, when combined with zone provides a lot of insights into passing options and attacking patterns that provide assists.</p>
+</section>
+<section id="note-plus-minus-calculations-for-number-of-players-by-locationarea" class="level3">
+<h3 class="anchored" data-anchor-id="note-plus-minus-calculations-for-number-of-players-by-locationarea">Note: Plus-minus calculations for number of players by location/area</h3>
+<p><em>Before I proceed further, <strong>I want to explain the plus-minus metric i have created to understand overloads by location</strong>.</em></p>
+<p><strong><em>The overload plus-minus function is of the form</em></strong></p>
+<p><em><code>(# teammates in location) - (# opponents in location)</code></em></p>
+<p><em>If the value is positive, then the attacking team has the advantage in these locations, and vice versa.</em></p>
+<p>These numbers are obtained by summing up indicator variables denoting their presence in the relevant thirds and zones.</p>
+<p><strong>I will keep the raw number of teammates, opponents and total number of players in a given location</strong>, as that helps better understand player congestions through the pitch at the time of the event.</p>
+<p>More congested areas away from goal usually mean a higher chance of disposession, and thus a lower chance of turning the pass into an assist. <strong>Congestion areas also help us understand defensive and attacking shapes during the event, allowing the model to learn from it and hopefully make better predictions</strong>.</p>
+<p>I create all these indicator columns (though slightly inefficient) to ensure that less time is taken for dummy column creation for cases where we need to use most of these columns for further analysis, for easier understanding of the raw data to non-technical audiences, and quicker query writing in subsequent CTEs to create other features.</p>
+</section>
+<section id="number-of-teammates-and-opponents-around-the-passer" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-teammates-and-opponents-around-the-passer">4. Number of Teammates and Opponents around the passer</h3>
+<p>Calculate the number of players and understand the plus-minus values in front of, behind, to the left and right of the passer for each game event. A higher number of teammates in zones just outside or inside the box who can be valid passing options in front of the passer can increase the chances of a pass becoming an assist. Similarly, understanding the overload and congestion patterns using these metrics for the wide areas (overall, left, and right) can help us understand effective wing-play assist patterns (through inverted wing play), while simultaneously helping understand whether the subsequent posession results in goal (key pass to overlapping full backs putting a cross in to players in the box, for example).</p>
+</section>
+<section id="number-of-teammates-and-opponents-by-third" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-teammates-and-opponents-by-third">5. Number of teammates and opponents by third</h3>
+<p>Understanding overloads by third is essential to understanding the exact <em>sub-phase</em> of attacking the team is in. Usually, if there are more opponents than teammates in the attacking third, then it is usually of a lower chance that a pass can be successfully completed and a goal can be scored, resulting in a lower probability of an assist.</p>
+<p>Midfield superiority usually dictates posession and progressive passing trends. More passing options in midfield imply the higher chance for posession retention and progressive movement due to the extra personnel The progressive movement could translate into line-breaking throughballs into the halfspaces or just outside the box leading to high chances at goal, implying a higher chance for passes from and to the middle third resulting in an assist.</p>
+<p>Noting the number of players in the defensive third helps us understand the defensive line height of the attacking team, as well as their rest-defense principles. a lower line implies more players in the defensive third, else there is more chance of pushing the attacking team’s defenders up towards the midfield to apply pressure on the defending team (further highlighting the importance of a midfield overload in chance creation).</p>
+<p>Depending on the <code>location_zone</code> and <code>goalmouth_angle</code> for the passer, we should generally expect that usually a number of teammates as valid passing options spread in areas closer to goal wrt to the passer should result in a higher chance for an assist.</p>
+</section>
+<section id="number-of-teammates-and-opponents-in-proximity-to-the-passer" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-teammates-and-opponents-in-proximity-to-the-passer">6. Number of teammates and opponents in proximity to the passer</h3>
+<p><strong>I define proximity as a player being <em>within 5 meters</em> of the passer.</strong></p>
+<p>If the pass origin zone is close to goal, and you have more teammates in proximity (i.e, the plus-minus of players in proxmity is a positive number), then you would expect to have mroe passing options that could lead to a goal, resulting in a higher probabilty for an assist.</p>
+<p>If there are more opponents in proximity but your <code>distance_to_goalcentre</code> is low, this might mean you need to play a backward pass to retain posession (might not be a bad thing if you have inverted wingers or #10s playing off of you for example). If you have more opponents around you and you are in the middle third from a non-threatening zone (like 11 or 15 for example), the player needs to try a risky long lobbed pass to switch play or beat the crowd. the lower probability of this coming off is again a lower chance for an assist for this pass, however it could result in the Next posession sequence resulting in a goal (from a cross or a pass into the box from halfspaces).</p>
+</section>
+<section id="number-of-teammates-and-opponents-in-attacking-halfspaces-and-just-outside-the-box" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-teammates-and-opponents-in-attacking-halfspaces-and-just-outside-the-box">7. Number of teammates and opponents in attacking halfspaces and just outside the box</h3>
+<p><strong>Define the Attacking Halfspaces as zones 22 and 24, and define the zone just outside the box as zone 23.</strong></p>
+<p>Usually, in the attacking phase, we notice that most of the playmakers (#10s and sometimes a creative #8) make incisive runs into zone 28 from these halfspaces. The halfspaces (along with zone 28) are also zones where most of the cross and corner clearances end up. If the attacking team regains posession in these zones, quick transitions and passes laid onto teammates making runs into the box are usually deadly. This increases the probability for an assist from these zones.</p>
+<p>Conversely, if the defending team has more of a presence here in comparision to the attacking team, and has only the goalkeeper behind them, this could signify a compact low defensive line with an offside trap tactic to prevent runs in behind towards goal.</p>
+</section>
+<section id="number-of-teammates-and-opponents-out-wide-in-total-out-wide-left-and-out-wide-right" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-teammates-and-opponents-out-wide-in-total-out-wide-left-and-out-wide-right">8. Number of teammates and opponents out wide in total, out wide left, and out wide right</h3>
+<p>Understanding the overloading of the attacking team in wide positions helps understand their pattern of play–understanding potential runs into the halfspaces (in an inverted wide player setting) or whether they approach the goaline and touchline to float, drill or whip crosses into the box. Usually, a greater number of players out wide highlights a spread out game with a high probability of crosses being the main assist type. We create a metric that can supplement that information when present to better inform the probability of it leading to an assist.</p>
+<p>Moreover, from these metrics we can get a rough idea of the width and overload philosophy of the defending team. If there is a wide-left defensive overload (i.e, the plus-minus for players in wide left zones is negative) for example, the passer is closer to the overloaded flank, and that there are a lower proprtion of players on the other flank, we can understand that this is a ball-side overload. ball side overloads force press resistance or switch of flanks from teams, both of which are high risk options. The chances for dispossession outweigh the goalscoring chances from a pass, resulting in a lower chance of an assist.</p>
+<p>However, if there is a attacking wide overload, this means that as we get closer to halfspaces, inverted play can begin and shots can be taken from these high shot frequency zones, which have a favourable shooting goalmouth angle and allow for a wider variety of shots.</p>
+</section>
+<section id="number-of-teammates-and-opponents-in-the-box" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-teammates-and-opponents-in-the-box">9. Number of teammates and opponents in the box</h3>
+<p>Though seemingly straightforward, the analysis of congestion of players in the box can differ based on pass types and other underlying situations.</p>
+<p>Usually, if there is a high congestion of players in the box–especially a concentration within the <em>shooting cone</em> (the triangle made by the shooter with respect to the goalmouth)-this results in a lower chance of a shot leading to goal. more often than not, even crosses have a low xG, and most are saved or misdirected due to man-marking or zonal marking defensive clearances and disposessions in the box by the centre backs. However, if there is usually a numerical advantage to the attacking team, the passer can pick the free man, and this could result in a higher chance at goal.</p>
+<p>In cases where the pass is coming from the halfspaces or just outside the box, having a lot of players can result in a lot of rebounds and goals, so though this pass might not result in an assist, it could result in a goal in the next pass-possession sequence.</p>
+</section>
+<section id="no.-of-pressers-on-the-passer" class="level3">
+<h3 class="anchored" data-anchor-id="no.-of-pressers-on-the-passer">10. No.&nbsp;of pressers on the passer</h3>
+<p>Here, I make the assumption that if an opposition player is within 3 metres of the passer, they can realistically attempt to pressure the passer to perform their action quicker. effective pressing in large numbers towards wide zones have a higher probability of turnover, which means passes are incomplete and thus have a lower chance of becoming an assist.</p>
+<p>Conversely, a lower number of pressers on the passer would mean that they have had the time to pick a viable (hopefully progressive) passing option, increasing the chances of a goal, and thereby the pass becoming an assist.</p>
+</section>
+<section id="number-of-teammates-marked-by-an-opponent" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-teammates-marked-by-an-opponent">11. Number of Teammates marked by an opponent</h3>
+<p>I calculate the minimum distance between every single teammate and opponent, and if that minimum distance is within 1.5 meters, then the attacking player is considered marked.</p>
+<p>Now, a pass is going to be highly improbable if most of the teammates are marked by the opponent, since it increases chance of disposession or miscontrol due to the press from the defensive marker.</p>
+<p>More teammates marked should mean a lower assist probability and vice versa.</p>
+</section>
+<section id="valid-passing-options-for-the-passer" class="level3">
+<h3 class="anchored" data-anchor-id="valid-passing-options-for-the-passer">12. Valid Passing Options for the passer</h3>
+<p>Now, consider the cases where the teammate is not marked, but opponents are blocking passing lanes to said teammate. More such opposition positioning will imply higher probabilty of interception and thereby a turnover, greatly reducing the probability of the pass being successful, much less an assist.</p>
+<p>So, I define a valid passing option as a teammate who is unmarked AND does not have an opposing player between the passer and teammate within 0.5 metres of the direct passing line between passer and teammate.</p>
+<p>Clearly, an increase in valid passing options, especially in central zones in the attacking third (which are high frequency high-xG shot zones) should translate to higher assist probability.</p>
+<p>Having more valid passing options out wide than centrally could be slightly detrimental to assist probabilty. More passing options in the wide attacking 3rd could correspond to a compact low block by the defensive team–closing down distances between defense and attack, heavily populating central areas and surrendering posession out wide noting the low chances of goals being scored from crosses whipped in and floated in in this situation.</p>
+</section>
+<section id="code-for-feature-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="code-for-feature-engineering">Code for Feature Engineering</h3>
+<p>I decided to create a table for the zonewise metrics, called <code>zonewise_metrics</code>, to preserve these raw metrics which are derived for each player. Creating a table rather than a view makes sense in this SQLite workflow, where Views are read-only. These variables and intermediate metrics could be used for further analyses, and if any issues exist, can be quickly queried and debugged.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- COUNT(*) counts null, count(&lt;column name&gt;) ignores null</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">-- average ignores null</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">-- sum ignores null</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> zonewise_metrics <span class="kw">AS</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> T1 <span class="kw">AS</span>(<span class="kw">SELECT</span> <span class="op">*</span>, </span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 4. Players Ahead &amp; behind of Passer</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> ((PlayerX <span class="op">&gt;</span> OriginX) <span class="kw">AND</span> (IsTM<span class="op">=</span><span class="dv">1</span>)) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> TM_is_ahead_of_passer,</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> ((PlayerX <span class="op">&lt;</span> OriginX) <span class="kw">AND</span> (IsTM<span class="op">=</span><span class="dv">1</span>)) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> TM_is_behind_of_passer,</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> ((PlayerX <span class="op">&gt;</span> OriginX) <span class="kw">AND</span> (IsTM<span class="op">=</span><span class="dv">0</span>)) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_is_ahead_of_passer,</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> ((PlayerX <span class="op">&lt;</span> OriginX) <span class="kw">AND</span> (IsTM<span class="op">=</span><span class="dv">0</span>)) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_is_behind_of_passer,</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (PlayerX <span class="op">&gt;</span> OriginX) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> is_ahead_of_passer,</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (PlayerX <span class="op">&lt;</span> OriginX) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> is_behind_of_passer,</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 4. Players left and right of Passer</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> ((PlayerY <span class="op">&gt;</span> OriginY) <span class="kw">AND</span> (IsTM<span class="op">=</span><span class="dv">1</span>)) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> TM_is_left_of_passer,</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> ((PlayerY <span class="op">&lt;</span> OriginY) <span class="kw">AND</span> (IsTM<span class="op">=</span><span class="dv">1</span>)) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> TM_is_right_of_passer,</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> ((PlayerY <span class="op">&gt;</span> OriginY) <span class="kw">AND</span> (IsTM<span class="op">=</span><span class="dv">0</span>)) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_is_left_of_passer,</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> ((PlayerY <span class="op">&lt;</span> OriginY) <span class="kw">AND</span> (IsTM<span class="op">=</span><span class="dv">0</span>)) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_is_right_of_passer,</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (PlayerY <span class="op">&gt;</span> OriginY) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> is_left_of_passer,</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (PlayerY <span class="op">&lt;</span> OriginY) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> is_right_of_passer,</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 2. Zone of player</span></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">60</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="fl">43.5</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="dv">41</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="op">-</span><span class="fl">20.16</span>) <span class="cf">THEN</span> <span class="dv">1</span> </span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">60</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="fl">43.5</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="fl">20.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="op">-</span><span class="fl">9.16</span>) <span class="cf">THEN</span> <span class="dv">2</span> </span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">60</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="fl">43.5</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="fl">9.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="fl">9.16</span>) <span class="cf">THEN</span> <span class="dv">3</span></span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">60</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="fl">43.5</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=</span><span class="fl">9.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="fl">20.16</span>) <span class="cf">THEN</span> <span class="dv">4</span></span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">60</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="fl">43.5</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=</span><span class="fl">20.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;=</span> <span class="dv">41</span>) <span class="cf">THEN</span> <span class="dv">5</span></span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a><span class="co">-- second latitudinal column</span></span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="fl">43.5</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="dv">20</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="dv">41</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="op">-</span><span class="fl">20.16</span>) <span class="cf">THEN</span> <span class="dv">6</span></span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="fl">43.5</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="dv">20</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="fl">20.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="op">-</span><span class="fl">9.16</span>) <span class="cf">THEN</span> <span class="dv">7</span> </span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="fl">43.5</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="dv">20</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="fl">9.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="fl">9.16</span>) <span class="cf">THEN</span> <span class="dv">8</span></span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="fl">43.5</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="dv">20</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=</span><span class="fl">9.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="fl">20.16</span>) <span class="cf">THEN</span> <span class="dv">9</span></span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="fl">43.5</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="dv">20</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=</span><span class="fl">20.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;=</span> <span class="dv">41</span>) <span class="cf">THEN</span> <span class="dv">10</span></span>
+<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a><span class="co">-- third latitudinal column</span></span>
+<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">0</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="dv">41</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="op">-</span><span class="fl">20.16</span>) <span class="cf">THEN</span> <span class="dv">11</span></span>
+<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">0</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="fl">20.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="op">-</span><span class="fl">9.16</span>) <span class="cf">THEN</span> <span class="dv">12</span></span>
+<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">0</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="fl">9.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="fl">9.16</span>) <span class="cf">THEN</span> <span class="dv">13</span></span>
+<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">0</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=</span><span class="fl">9.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="fl">20.16</span>) <span class="cf">THEN</span> <span class="dv">14</span></span>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">0</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=</span><span class="fl">20.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;=</span> <span class="dv">41</span>) <span class="cf">THEN</span> <span class="dv">15</span></span>
+<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a><span class="co">-- fourth latitudinal column</span></span>
+<span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="dv">0</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">20</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="dv">41</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="op">-</span><span class="fl">20.16</span>) <span class="cf">THEN</span> <span class="dv">16</span></span>
+<span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="dv">0</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">20</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="fl">20.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="op">-</span><span class="fl">9.16</span>) <span class="cf">THEN</span> <span class="dv">17</span></span>
+<span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="dv">0</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">20</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="fl">9.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="fl">9.16</span>) <span class="cf">THEN</span> <span class="dv">18</span></span>
+<span id="cb27-43"><a href="#cb27-43" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="dv">0</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">20</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=</span><span class="fl">9.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="fl">20.16</span>) <span class="cf">THEN</span> <span class="dv">19</span></span>
+<span id="cb27-44"><a href="#cb27-44" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="dv">0</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">20</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=</span><span class="fl">20.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;=</span> <span class="dv">41</span>) <span class="cf">THEN</span> <span class="dv">20</span></span>
+<span id="cb27-45"><a href="#cb27-45" aria-hidden="true" tabindex="-1"></a><span class="co">-- fifth latitudinal column</span></span>
+<span id="cb27-46"><a href="#cb27-46" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="fl">43.5</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="dv">41</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="op">-</span><span class="fl">20.16</span>) <span class="cf">THEN</span> <span class="dv">21</span></span>
+<span id="cb27-47"><a href="#cb27-47" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="fl">43.5</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="fl">20.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="op">-</span><span class="fl">9.16</span>) <span class="cf">THEN</span> <span class="dv">22</span></span>
+<span id="cb27-48"><a href="#cb27-48" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="fl">43.5</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="fl">9.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="fl">9.16</span>) <span class="cf">THEN</span> <span class="dv">23</span></span>
+<span id="cb27-49"><a href="#cb27-49" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="fl">43.5</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=</span><span class="fl">9.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="fl">20.16</span>) <span class="cf">THEN</span> <span class="dv">24</span></span>
+<span id="cb27-50"><a href="#cb27-50" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="fl">43.5</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=</span><span class="fl">20.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;=</span> <span class="dv">41</span>) <span class="cf">THEN</span> <span class="dv">25</span></span>
+<span id="cb27-51"><a href="#cb27-51" aria-hidden="true" tabindex="-1"></a><span class="co">-- sixth latitudinal column</span></span>
+<span id="cb27-52"><a href="#cb27-52" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;</span> <span class="fl">43.5</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="dv">60</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="dv">41</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="op">-</span><span class="fl">20.16</span>) <span class="cf">THEN</span> <span class="dv">26</span></span>
+<span id="cb27-53"><a href="#cb27-53" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="fl">43.5</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="dv">60</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="fl">20.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="op">-</span><span class="fl">9.16</span>) <span class="cf">THEN</span> <span class="dv">27</span></span>
+<span id="cb27-54"><a href="#cb27-54" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="fl">43.5</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="dv">60</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=-</span><span class="fl">9.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="fl">9.16</span>) <span class="cf">THEN</span> <span class="dv">28</span></span>
+<span id="cb27-55"><a href="#cb27-55" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="fl">43.5</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="dv">60</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=</span><span class="fl">9.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;</span> <span class="fl">20.16</span>) <span class="cf">THEN</span> <span class="dv">29</span></span>
+<span id="cb27-56"><a href="#cb27-56" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="fl">43.5</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="dv">60</span>) <span class="kw">AND</span> (PlayerY <span class="op">&gt;=</span><span class="fl">20.16</span> <span class="kw">AND</span> PlayerY <span class="op">&lt;=</span> <span class="dv">41</span>) <span class="cf">THEN</span> <span class="dv">30</span></span>
+<span id="cb27-57"><a href="#cb27-57" aria-hidden="true" tabindex="-1"></a><span class="cf">ELSE</span> <span class="op">-</span><span class="dv">1</span> <span class="cf">END</span> <span class="kw">AS</span> location_zone,</span>
+<span id="cb27-58"><a href="#cb27-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-59"><a href="#cb27-59" aria-hidden="true" tabindex="-1"></a><span class="co">-- supplementary feature for Feature 5. </span></span>
+<span id="cb27-60"><a href="#cb27-60" aria-hidden="true" tabindex="-1"></a><span class="co">-- Factor for longitudinal 3rd on the pitch</span></span>
+<span id="cb27-61"><a href="#cb27-61" aria-hidden="true" tabindex="-1"></a><span class="co">-- Not used in current analyses, for understanding data table only</span></span>
+<span id="cb27-62"><a href="#cb27-62" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">60</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="dv">20</span>) <span class="cf">THEN</span> <span class="ot">"Defensive 3rd"</span></span>
+<span id="cb27-63"><a href="#cb27-63" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">20</span>) <span class="cf">THEN</span> <span class="ot">"Middle 3rd"</span></span>
+<span id="cb27-64"><a href="#cb27-64" aria-hidden="true" tabindex="-1"></a><span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="dv">60</span>) <span class="cf">THEN</span> <span class="ot">"Attacking 3rd"</span></span>
+<span id="cb27-65"><a href="#cb27-65" aria-hidden="true" tabindex="-1"></a><span class="cf">ELSE</span> <span class="ot">"Unknown"</span> <span class="cf">END</span> <span class="kw">AS</span> pitch_third,</span>
+<span id="cb27-66"><a href="#cb27-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-67"><a href="#cb27-67" aria-hidden="true" tabindex="-1"></a><span class="co">--Feature 5.  Whether player in the respective third</span></span>
+<span id="cb27-68"><a href="#cb27-68" aria-hidden="true" tabindex="-1"></a><span class="co">-- for defensive third</span></span>
+<span id="cb27-69"><a href="#cb27-69" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">60</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="dv">20</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> team_in_def_3rd,</span>
+<span id="cb27-70"><a href="#cb27-70" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">60</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="dv">20</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_in_def_3rd,</span>
+<span id="cb27-71"><a href="#cb27-71" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">60</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="op">-</span><span class="dv">20</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> in_def_3rd,</span>
+<span id="cb27-72"><a href="#cb27-72" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 5. for middle third</span></span>
+<span id="cb27-73"><a href="#cb27-73" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">20</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> team_in_mid_3rd,</span>
+<span id="cb27-74"><a href="#cb27-74" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">20</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_in_mid_3rd,</span>
+<span id="cb27-75"><a href="#cb27-75" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=-</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;</span> <span class="dv">20</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> in_mid_3rd,</span>
+<span id="cb27-76"><a href="#cb27-76" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 5. for attacking third</span></span>
+<span id="cb27-77"><a href="#cb27-77" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (PlayerX <span class="op">&gt;=</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="dv">60</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> team_in_att_3rd,</span>
+<span id="cb27-78"><a href="#cb27-78" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (PlayerX <span class="op">&gt;=</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="dv">60</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_in_att_3rd,</span>
+<span id="cb27-79"><a href="#cb27-79" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (PlayerX <span class="op">&gt;=</span><span class="dv">20</span> <span class="kw">AND</span> PlayerX <span class="op">&lt;=</span> <span class="dv">60</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> in_att_3rd,</span>
+<span id="cb27-80"><a href="#cb27-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-81"><a href="#cb27-81" aria-hidden="true" tabindex="-1"></a><span class="co">-- supplementary feature for Features 6, 10, 11 &amp; 12</span></span>
+<span id="cb27-82"><a href="#cb27-82" aria-hidden="true" tabindex="-1"></a><span class="co">-- distances to passer</span></span>
+<span id="cb27-83"><a href="#cb27-83" aria-hidden="true" tabindex="-1"></a><span class="fu">SQRT</span>(<span class="fu">POWER</span>(PlayerX <span class="op">-</span> OriginX, <span class="dv">2</span>) <span class="op">+</span> <span class="fu">POWER</span>(PlayerY <span class="op">-</span> OriginY, <span class="dv">2</span>)) <span class="kw">AS</span> dist_to_passer,</span>
+<span id="cb27-84"><a href="#cb27-84" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 3. distances to goalcentre,</span></span>
+<span id="cb27-85"><a href="#cb27-85" aria-hidden="true" tabindex="-1"></a><span class="co">-- Goalcentre is (60, 0) by convention assumptions</span></span>
+<span id="cb27-86"><a href="#cb27-86" aria-hidden="true" tabindex="-1"></a><span class="fu">SQRT</span>(<span class="fu">POWER</span>(PlayerX <span class="op">-</span> <span class="dv">60</span>, <span class="dv">2</span>) <span class="op">+</span> <span class="fu">POWER</span>(PlayerY <span class="op">-</span> <span class="dv">0</span>, <span class="dv">2</span>)) <span class="kw">AS</span> dist_to_goalcentre,</span>
+<span id="cb27-87"><a href="#cb27-87" aria-hidden="true" tabindex="-1"></a><span class="co">-- supplementary feature for Feature 3. </span></span>
+<span id="cb27-88"><a href="#cb27-88" aria-hidden="true" tabindex="-1"></a><span class="co">-- distances to left post</span></span>
+<span id="cb27-89"><a href="#cb27-89" aria-hidden="true" tabindex="-1"></a><span class="fu">SQRT</span>(<span class="fu">POWER</span>(PlayerX <span class="op">-</span> <span class="dv">60</span>, <span class="dv">2</span>) <span class="op">+</span> <span class="fu">POWER</span>(PlayerY <span class="op">-</span> <span class="fl">3.66</span>, <span class="dv">2</span>)) <span class="kw">AS</span> dist_to_left_post,</span>
+<span id="cb27-90"><a href="#cb27-90" aria-hidden="true" tabindex="-1"></a><span class="co">-- supplementary feature for Feature 3.</span></span>
+<span id="cb27-91"><a href="#cb27-91" aria-hidden="true" tabindex="-1"></a><span class="co">-- distances to right post</span></span>
+<span id="cb27-92"><a href="#cb27-92" aria-hidden="true" tabindex="-1"></a><span class="fu">SQRT</span>(<span class="fu">POWER</span>(PlayerX <span class="op">-</span> <span class="dv">60</span>, <span class="dv">2</span>) <span class="op">+</span> <span class="fu">POWER</span>(PlayerY <span class="op">+</span> <span class="fl">3.66</span>, <span class="dv">2</span>)) <span class="kw">AS</span> dist_to_right_post</span>
+<span id="cb27-93"><a href="#cb27-93" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> player_locations_with_origin),</span>
+<span id="cb27-94"><a href="#cb27-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-95"><a href="#cb27-95" aria-hidden="true" tabindex="-1"></a>T2 <span class="kw">AS</span> (<span class="kw">SELECT</span> <span class="op">*</span>,</span>
+<span id="cb27-96"><a href="#cb27-96" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 3. </span></span>
+<span id="cb27-97"><a href="#cb27-97" aria-hidden="true" tabindex="-1"></a><span class="co">-- angles to goalmouth (using the cosine rule)</span></span>
+<span id="cb27-98"><a href="#cb27-98" aria-hidden="true" tabindex="-1"></a>DEGREES(<span class="fu">ACOS</span>((<span class="fu">POWER</span>(dist_to_left_post, <span class="dv">2</span>) <span class="op">+</span> <span class="fu">POWER</span>(dist_to_right_post, <span class="dv">2</span>) <span class="op">-</span> <span class="fu">POWER</span>(<span class="fl">7.32</span>, <span class="dv">2</span>))<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>dist_to_left_post<span class="op">*</span>dist_to_right_post))) <span class="kw">AS</span> goalmouth_angle,</span>
+<span id="cb27-99"><a href="#cb27-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-100"><a href="#cb27-100" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 6. player in proxmity</span></span>
+<span id="cb27-101"><a href="#cb27-101" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> dist_to_passer <span class="op">&lt;=</span><span class="dv">5</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> team_in_proximity,</span>
+<span id="cb27-102"><a href="#cb27-102" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> dist_to_passer <span class="op">&lt;=</span><span class="dv">5</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_in_proximity,</span>
+<span id="cb27-103"><a href="#cb27-103" aria-hidden="true" tabindex="-1"></a><span class="co">-- note that the passer cannot be in proximity to themselves, so for all non-passers only</span></span>
+<span id="cb27-104"><a href="#cb27-104" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> dist_to_passer <span class="op">&lt;=</span><span class="dv">5</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> in_proximity,</span>
+<span id="cb27-105"><a href="#cb27-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-106"><a href="#cb27-106" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 10.</span></span>
+<span id="cb27-107"><a href="#cb27-107" aria-hidden="true" tabindex="-1"></a><span class="co">-- if the opponent is within 3 metres of the passer, then we can assume the passer can be pressured by that specific opponent</span></span>
+<span id="cb27-108"><a href="#cb27-108" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> dist_to_passer<span class="op">&lt;=</span> <span class="dv">3</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> pressuring_passer,</span>
+<span id="cb27-109"><a href="#cb27-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-110"><a href="#cb27-110" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 7.</span></span>
+<span id="cb27-111"><a href="#cb27-111" aria-hidden="true" tabindex="-1"></a><span class="co">-- player in halfspace</span></span>
+<span id="cb27-112"><a href="#cb27-112" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (IsTM<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> (location_zone<span class="op">=</span><span class="dv">22</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">24</span>) <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> team_in_half_space,</span>
+<span id="cb27-113"><a href="#cb27-113" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (IsTM<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (location_zone<span class="op">=</span><span class="dv">22</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">24</span>) <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_in_half_space,</span>
+<span id="cb27-114"><a href="#cb27-114" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> location_zone<span class="op">=</span><span class="dv">22</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">24</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> in_half_space,</span>
+<span id="cb27-115"><a href="#cb27-115" aria-hidden="true" tabindex="-1"></a><span class="co">-- player in front of attacking box</span></span>
+<span id="cb27-116"><a href="#cb27-116" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (IsTM<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> location_zone<span class="op">=</span><span class="dv">23</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> team_in_front_of_box,</span>
+<span id="cb27-117"><a href="#cb27-117" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (IsTM<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> location_zone<span class="op">=</span><span class="dv">23</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_in_front_of_box,</span>
+<span id="cb27-118"><a href="#cb27-118" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> location_zone<span class="op">=</span><span class="dv">23</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> in_front_of_box,</span>
+<span id="cb27-119"><a href="#cb27-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-120"><a href="#cb27-120" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 8.</span></span>
+<span id="cb27-121"><a href="#cb27-121" aria-hidden="true" tabindex="-1"></a><span class="co">-- players out wide in attacking third</span></span>
+<span id="cb27-122"><a href="#cb27-122" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (location_zone<span class="op">=</span><span class="dv">21</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">25</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">26</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">30</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> team_is_out_wide,</span>
+<span id="cb27-123"><a href="#cb27-123" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (location_zone<span class="op">=</span><span class="dv">21</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">25</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">26</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">30</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_is_out_wide,</span>
+<span id="cb27-124"><a href="#cb27-124" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> location_zone<span class="op">=</span><span class="dv">21</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">25</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">26</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">30</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> is_out_wide,</span>
+<span id="cb27-125"><a href="#cb27-125" aria-hidden="true" tabindex="-1"></a><span class="co">-- players out wide right in attacking third</span></span>
+<span id="cb27-126"><a href="#cb27-126" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (location_zone<span class="op">=</span><span class="dv">21</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">26</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> team_is_out_wide_right,</span>
+<span id="cb27-127"><a href="#cb27-127" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (location_zone<span class="op">=</span><span class="dv">21</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">26</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_is_out_wide_right,</span>
+<span id="cb27-128"><a href="#cb27-128" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> location_zone<span class="op">=</span><span class="dv">21</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">26</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> is_out_wide_right,</span>
+<span id="cb27-129"><a href="#cb27-129" aria-hidden="true" tabindex="-1"></a><span class="co">-- players out wide left in attacking third</span></span>
+<span id="cb27-130"><a href="#cb27-130" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (location_zone<span class="op">=</span><span class="dv">25</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">30</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> team_is_out_wide_left,</span>
+<span id="cb27-131"><a href="#cb27-131" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (location_zone<span class="op">=</span><span class="dv">25</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">30</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_is_out_wide_left,</span>
+<span id="cb27-132"><a href="#cb27-132" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> location_zone<span class="op">=</span><span class="dv">25</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">30</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> is_out_wide_left,</span>
+<span id="cb27-133"><a href="#cb27-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-134"><a href="#cb27-134" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 9.</span></span>
+<span id="cb27-135"><a href="#cb27-135" aria-hidden="true" tabindex="-1"></a><span class="co">-- player in attacking box</span></span>
+<span id="cb27-136"><a href="#cb27-136" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (location_zone<span class="op">=</span><span class="dv">27</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">28</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">29</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> team_is_in_box,</span>
+<span id="cb27-137"><a href="#cb27-137" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> IsTM<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> (location_zone<span class="op">=</span><span class="dv">27</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">28</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">29</span>) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_is_in_box,</span>
+<span id="cb27-138"><a href="#cb27-138" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> location_zone<span class="op">=</span><span class="dv">27</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">28</span> <span class="kw">OR</span> location_zone<span class="op">=</span><span class="dv">29</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> is_in_box</span>
+<span id="cb27-139"><a href="#cb27-139" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> T1)</span>
+<span id="cb27-140"><a href="#cb27-140" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> T2;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now that we have the first data table of indicator variables as required to help define our features later, we focus on getting these indicator features, marked indicators and valid passing option indicators for the passer’s teammate for each game event.</p>
+<p>For similar reasons as for <code>zonewise_metrics</code>, I create a table for these teammate metrics and indicators, called <code>teammate_metrics</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> teammate_metrics <span class="kw">AS</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> T1 <span class="kw">AS</span>(</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co">-- getting the raw data</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- of teammate(pid1) and opponent(pid) locations</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> P1.GameEventID, </span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>P1.PlayerID <span class="kw">as</span> pid,</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>P1.isTM <span class="kw">as</span> pidIsTM, </span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>P1.PlayerX <span class="kw">as</span> pidX, </span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>P1.PlayerY <span class="kw">as</span> pidY,</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>P1.OriginX, P1.OriginY,</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>P1.IsePlayer <span class="kw">as</span> pid_IsePlayer,</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>P2.PlayerID <span class="kw">as</span> pid1,</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>P2.isTM <span class="kw">as</span> pid1IsTM, </span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>P2.PlayerX <span class="kw">as</span> pid1X, </span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>P2.PlayerY <span class="kw">as</span> pid1Y,</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co">--P1.OriginX, P1.OriginY,</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>P2.IsePlayer <span class="kw">as</span> pid1_IsePlayer</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co">-- perform the self join</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> player_locations_with_origin P1 <span class="kw">JOIN</span> player_locations_with_origin P2</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="co">-- on the grouping column</span></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> P1.GameEventID <span class="op">=</span> P2.GameEventID</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="co">-- Remove same player ID duplicate tuples and the event player Rows</span></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> pid <span class="op">&lt;&gt;</span> pid1 <span class="kw">AND</span> (pid_IsePlayer<span class="op">=</span><span class="dv">0</span> <span class="kw">AND</span> P2.IsePlayer<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="co">-- could look into left table row id &lt;= right table row id could prevent reversed tuples, and consider the unique combinations of players to calculate the minimum</span></span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a><span class="co">-- needs more time to be verified.</span></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a><span class="co">-- Since we are dealing with only around 78,000 raw rows for the time being, and in the interest of time, I do not explore this optimisation</span></span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a><span class="co">-- Second CTE to get the secondary player locations and calculate the distances</span></span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>T2 <span class="kw">AS</span>(</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> T1.<span class="op">*</span>,</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a><span class="co">-- Features 11 &amp; 12. </span></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a><span class="co">-- calculating the distance between teammate and opponent</span></span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a><span class="fu">SQRT</span>(<span class="fu">POWER</span>(T1.pidX <span class="op">-</span> T1.pid1X, <span class="dv">2</span>) <span class="op">+</span> <span class="fu">POWER</span>(T1.pidY <span class="op">-</span> T1.pid1Y, <span class="dv">2</span>)) <span class="kw">AS</span> dist_between_player,</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 12.</span></span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a><span class="co">-- calculating the distance between teammate and passer</span></span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a><span class="fu">SQRT</span>(<span class="fu">POWER</span>(T1.OriginX <span class="op">-</span> T1.pid1X, <span class="dv">2</span>) <span class="op">+</span> <span class="fu">POWER</span>(T1.OriginY <span class="op">-</span> T1.pid1Y, <span class="dv">2</span>)) <span class="kw">AS</span> TM_dist_to_passer,</span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 12.</span></span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a><span class="co">-- calculating the distance between passer and opponent</span></span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="co">-- </span><span class="al">NOTE</span><span class="co">: I hard code this instead of getting a join from zonewise_metrics to speed up computation as well as reduce join dependencies, while helping understand the construction of a valid_passing_option</span></span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a><span class="fu">SQRT</span>(<span class="fu">POWER</span>(T1.OriginX <span class="op">-</span> T1.pidX, <span class="dv">2</span>) <span class="op">+</span> <span class="fu">POWER</span>(T1.OriginY <span class="op">-</span> T1.pidY, <span class="dv">2</span>)) <span class="kw">AS</span> opp_dist_to_passer,</span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 12.</span></span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a><span class="co">-- for the cases between non-passing teammates and corresponding opponents</span></span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pidX <span class="op">&gt;</span> T1.pid1X <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_player_is_forward,</span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pidX <span class="op">&lt;</span> T1.pid1X <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_player_is_behind,</span>
+<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pidX <span class="op">=</span> T1.pid1X <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_player_is_in_vert_line,</span>
+<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pidY <span class="op">&gt;</span> T1.pid1Y <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_player_is_left,</span>
+<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pidY <span class="op">&lt;</span> t1.pid1Y <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_player_is_right,</span>
+<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pidY <span class="op">=</span> T1.pid1Y <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_player_is_in_horiz_line,</span>
+<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a><span class="co">-- for the teammates around the passer</span></span>
+<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pidX <span class="op">&gt;</span> T1.OriginX <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_in_front_of_passer,</span>
+<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pidX <span class="op">&lt;</span> T1.OriginX <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_behind_of_passer,</span>
+<span id="cb28-55"><a href="#cb28-55" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pidX <span class="op">=</span> T1.OriginX <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_in_vert_line_of_passer,</span>
+<span id="cb28-56"><a href="#cb28-56" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pidY <span class="op">&gt;</span> T1.OriginY <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_in_left_of_passer,</span>
+<span id="cb28-57"><a href="#cb28-57" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pidY <span class="op">&lt;</span> T1.OriginY <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_in_right_of_passer,</span>
+<span id="cb28-58"><a href="#cb28-58" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pidY <span class="op">=</span> T1.OriginY <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> opp_in_horiz_line_of_passer,</span>
+<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a><span class="co">-- for the teammates around the passer</span></span>
+<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pid1X <span class="op">&gt;</span> T1.OriginX <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> TM_in_front_of_passer,</span>
+<span id="cb28-61"><a href="#cb28-61" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pid1X <span class="op">&lt;</span> T1.OriginX <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> TM_behind_of_passer,</span>
+<span id="cb28-62"><a href="#cb28-62" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pid1X <span class="op">=</span> T1.OriginX <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> TM_in_horiz_line_of_passer,</span>
+<span id="cb28-63"><a href="#cb28-63" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pid1Y <span class="op">&gt;</span> T1.OriginY <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> TM_in_left_of_passer,</span>
+<span id="cb28-64"><a href="#cb28-64" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pid1Y <span class="op">&lt;</span> T1.OriginY <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> TM_in_right_of_passer,</span>
+<span id="cb28-65"><a href="#cb28-65" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> T1.pid1Y <span class="op">=</span> T1.OriginY <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> TM_in_vert_line_of_passer</span>
+<span id="cb28-66"><a href="#cb28-66" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> T1</span>
+<span id="cb28-67"><a href="#cb28-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-68"><a href="#cb28-68" aria-hidden="true" tabindex="-1"></a><span class="co">-- getting the cases where the player from the P2 table is a teammate and</span></span>
+<span id="cb28-69"><a href="#cb28-69" aria-hidden="true" tabindex="-1"></a><span class="co">-- player from P1 is an opponent so we get the </span></span>
+<span id="cb28-70"><a href="#cb28-70" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> T1.pid1IsTM<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> T1.pidIsTM<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb28-71"><a href="#cb28-71" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb28-72"><a href="#cb28-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-73"><a href="#cb28-73" aria-hidden="true" tabindex="-1"></a><span class="co">-- CTE to calculate perpendicular distance (where relevant) to the passing lane for each teammate</span></span>
+<span id="cb28-74"><a href="#cb28-74" aria-hidden="true" tabindex="-1"></a>T3 <span class="kw">AS</span> (</span>
+<span id="cb28-75"><a href="#cb28-75" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span>,</span>
+<span id="cb28-76"><a href="#cb28-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-77"><a href="#cb28-77" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 12.</span></span>
+<span id="cb28-78"><a href="#cb28-78" aria-hidden="true" tabindex="-1"></a><span class="co">-- when TM is in front of the passer, we want the opponent to be in front of the passer but behind the teammate</span></span>
+<span id="cb28-79"><a href="#cb28-79" aria-hidden="true" tabindex="-1"></a><span class="co">-- when TM is in behind of the passer, we want the opponent to be in behind the passer but ahead of the teammate</span></span>
+<span id="cb28-80"><a href="#cb28-80" aria-hidden="true" tabindex="-1"></a><span class="co">-- when TM is to the straight right of the passer, we want the opponent to be in the right of the passer, but to the left of the teammate</span></span>
+<span id="cb28-81"><a href="#cb28-81" aria-hidden="true" tabindex="-1"></a><span class="co">-- when TM is to the straight left of the passer, we want the opponent to be in the left of the passer, but to the right of the teammate</span></span>
+<span id="cb28-82"><a href="#cb28-82" aria-hidden="true" tabindex="-1"></a><span class="co">-- calculating the perpendicular distance between the opponent and passing lane to teammate</span></span>
+<span id="cb28-83"><a href="#cb28-83" aria-hidden="true" tabindex="-1"></a><span class="co">-- when the opponent is not between the passer and teammate, I set the value to null</span></span>
+<span id="cb28-84"><a href="#cb28-84" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> ((TM_in_front_of_passer<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> opp_in_front_of_passer<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> opp_player_is_behind<span class="op">=</span><span class="dv">1</span>) <span class="kw">OR</span> </span>
+<span id="cb28-85"><a href="#cb28-85" aria-hidden="true" tabindex="-1"></a>(TM_behind_of_passer<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> opp_behind_of_passer<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> opp_player_is_forward<span class="op">=</span><span class="dv">1</span>) <span class="kw">OR</span></span>
+<span id="cb28-86"><a href="#cb28-86" aria-hidden="true" tabindex="-1"></a>(TM_in_vert_line_of_passer<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> ((opp_player_is_left<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> TM_in_right_of_passer<span class="op">=</span><span class="dv">1</span>) <span class="kw">OR</span> (opp_player_is_right<span class="op">=</span><span class="dv">1</span> <span class="kw">AND</span> TM_in_left_of_passer<span class="op">=</span><span class="dv">1</span>)))) <span class="cf">THEN</span> <span class="fu">ABS</span>((pid1X<span class="op">-</span>OriginX)<span class="op">*</span>(OriginY<span class="op">-</span>pidY) <span class="op">-</span> (OriginX<span class="op">-</span>pidX)<span class="op">*</span>(pid1Y<span class="op">-</span>OriginY))<span class="op">/</span> <span class="fu">SQRT</span>(<span class="fu">POWER</span>((OriginX<span class="op">-</span>pid1X), <span class="dv">2</span>) <span class="op">+</span> <span class="fu">POWER</span>((OriginY<span class="op">-</span>pid1Y), <span class="dv">2</span>)) <span class="cf">ELSE</span> <span class="kw">NULL</span> <span class="cf">END</span> <span class="kw">AS</span> opp_dist_to_passing_lane</span>
+<span id="cb28-87"><a href="#cb28-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-88"><a href="#cb28-88" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> T2</span>
+<span id="cb28-89"><a href="#cb28-89" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb28-90"><a href="#cb28-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-91"><a href="#cb28-91" aria-hidden="true" tabindex="-1"></a><span class="co">-- Final query getting the table with indicator variable to players who are a valid passing option for the passer</span></span>
+<span id="cb28-92"><a href="#cb28-92" aria-hidden="true" tabindex="-1"></a>T4 <span class="kw">AS</span>(</span>
+<span id="cb28-93"><a href="#cb28-93" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> T3.<span class="op">*</span>,</span>
+<span id="cb28-94"><a href="#cb28-94" aria-hidden="true" tabindex="-1"></a><span class="co">-- supplementary statistic for each teammate</span></span>
+<span id="cb28-95"><a href="#cb28-95" aria-hidden="true" tabindex="-1"></a><span class="fu">MIN</span>(T3.dist_between_player) <span class="kw">as</span> closest_opp_player,</span>
+<span id="cb28-96"><a href="#cb28-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-97"><a href="#cb28-97" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 10. </span></span>
+<span id="cb28-98"><a href="#cb28-98" aria-hidden="true" tabindex="-1"></a><span class="co">-- indicator variable to denote whether a player is marked.</span></span>
+<span id="cb28-99"><a href="#cb28-99" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> <span class="fu">MIN</span>(T3.dist_between_player) <span class="op">&lt;</span> <span class="fl">1.5</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> isMarked,</span>
+<span id="cb28-100"><a href="#cb28-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-101"><a href="#cb28-101" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 11.</span></span>
+<span id="cb28-102"><a href="#cb28-102" aria-hidden="true" tabindex="-1"></a><span class="co">-- when an opposing player is sufficiently far away, and the opponent is not around the passing lane (i.e, the opposition player not between the range of the pass location to teh to the teammate), then they are a valid passing option.</span></span>
+<span id="cb28-103"><a href="#cb28-103" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> <span class="cf">WHEN</span> (<span class="fu">MIN</span>(T3.dist_between_player) <span class="op">&gt;=</span> <span class="fl">1.5</span> <span class="kw">AND</span> (T3.opp_dist_to_passing_lane <span class="kw">IS</span> <span class="kw">NULL</span> <span class="kw">OR</span> T3.opp_dist_to_passing_lane <span class="op">&gt;</span> <span class="fl">0.5</span>)) <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span> <span class="kw">AS</span> valid_passing_option,</span>
+<span id="cb28-104"><a href="#cb28-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-105"><a href="#cb28-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-106"><a href="#cb28-106" aria-hidden="true" tabindex="-1"></a><span class="co">-- supplementary statistics</span></span>
+<span id="cb28-107"><a href="#cb28-107" aria-hidden="true" tabindex="-1"></a><span class="co">-- not used in our case so far</span></span>
+<span id="cb28-108"><a href="#cb28-108" aria-hidden="true" tabindex="-1"></a><span class="co">-- for future reference, stored in teammate_metrics</span></span>
+<span id="cb28-109"><a href="#cb28-109" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(T3.opp_player_is_forward) <span class="kw">AS</span> tot_opps_in_front,</span>
+<span id="cb28-110"><a href="#cb28-110" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(T3.opp_player_is_behind) <span class="kw">AS</span> tot_opps_behind,</span>
+<span id="cb28-111"><a href="#cb28-111" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(T3.opp_player_is_left) <span class="kw">AS</span> tot_opps_to_left,</span>
+<span id="cb28-112"><a href="#cb28-112" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(T3.opp_player_is_right) <span class="kw">AS</span> tot_opps_to_right</span>
+<span id="cb28-113"><a href="#cb28-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-114"><a href="#cb28-114" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> T3</span>
+<span id="cb28-115"><a href="#cb28-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-116"><a href="#cb28-116" aria-hidden="true" tabindex="-1"></a><span class="co">-- getting these stats by each teammate in the respective game event</span></span>
+<span id="cb28-117"><a href="#cb28-117" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> T3.GameEventID, T3.pid1)</span>
+<span id="cb28-118"><a href="#cb28-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-119"><a href="#cb28-119" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> T4;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(<span class="at">conn=</span>TD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "events"                       "pass_org_misreflections"     
+[3] "player_locations"             "player_locations_with_origin"
+[5] "teammate_metrics"             "zonewise_metrics"            </code></pre>
+</div>
+</div>
+<p>Note that in an ideal case, I would have defined a table and assigned (GameEventID, playerID as pid) as the primary key tuple using a <code>CREATE TABLE</code> statement. In the interet of time, I do not do so.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>PRAGMA table_info(teammate_metrics);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finally, I create a table <code>feature_label_full_stats</code> with the GameEventID, GameID, EventPlayerID and all the relevant features for future analysis, including the labels.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> feature_label_full_stats <span class="kw">AS</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">-- create the CTE for the passer metrics from zonewise_metrics</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> T1 <span class="kw">AS</span>(</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">-- unique row identifier</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>E.GameEventID, E.GameID, E.EventPlayerID, </span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 1.</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">-- getting the corrected Pass Origin Coordinates in place of BallX and BallY</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>Z.OriginX, Z.OriginY, </span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 2.</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="co">-- location zone and the third on the pitch</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>Z.location_zone, Z.pitch_third, </span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 3 (incl. supplementary features).</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a><span class="co">-- Distance from pass location to goalcentre, and the goalmouth angle</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>Z.dist_to_left_post, Z.dist_to_right_post, Z.dist_to_goalcentre, Z.goalmouth_angle,</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a><span class="co">-- supplementary features in original events dataset</span></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>E.PassOutcome, E.EventPlayerSpeed, </span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a><span class="co">-- Label</span></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>E.IsPossGoal,</span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a><span class="co">-- miscellaneous, kept for future analysis if required</span></span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>E.IsNextPossGoal</span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> <span class="kw">events</span> E <span class="kw">JOIN</span> zonewise_metrics Z <span class="kw">ON</span> E.GameEventID<span class="op">=</span>Z.GameEventID <span class="kw">AND</span> E.EventPlayerID<span class="op">=</span>Z.PlayerID</span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a><span class="co">-- extra step to ensure only event players are joined to.</span></span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a><span class="co">-- not needed, but would not change much.</span></span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Z.IsePlayer<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a><span class="co">-- CTE to get the aggregate measures from zonewise_metrics</span></span>
+<span id="cb32-37"><a href="#cb32-37" aria-hidden="true" tabindex="-1"></a>T2 <span class="kw">AS</span>(</span>
+<span id="cb32-38"><a href="#cb32-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-39"><a href="#cb32-39" aria-hidden="true" tabindex="-1"></a><span class="co">-- for joining to tables later</span></span>
+<span id="cb32-40"><a href="#cb32-40" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Z.GameEventID <span class="kw">as</span> GID_Z,</span>
+<span id="cb32-41"><a href="#cb32-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-42"><a href="#cb32-42" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 4.</span></span>
+<span id="cb32-43"><a href="#cb32-43" aria-hidden="true" tabindex="-1"></a><span class="co">-- for the number of teammates around passer</span></span>
+<span id="cb32-44"><a href="#cb32-44" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.TM_is_ahead_of_passer) <span class="kw">AS</span> TMs_ahead_of_passer,</span>
+<span id="cb32-45"><a href="#cb32-45" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.TM_is_behind_of_passer) <span class="kw">AS</span> TMs_behind_of_passer,</span>
+<span id="cb32-46"><a href="#cb32-46" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.TM_is_left_of_passer) <span class="kw">AS</span> TMs_left_of_passer,</span>
+<span id="cb32-47"><a href="#cb32-47" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.TM_is_right_of_passer) <span class="kw">AS</span> TMs_right_of_passer,</span>
+<span id="cb32-48"><a href="#cb32-48" aria-hidden="true" tabindex="-1"></a><span class="co">-- for the number of opponents around passer</span></span>
+<span id="cb32-49"><a href="#cb32-49" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_is_ahead_of_passer) <span class="kw">AS</span> opps_ahead_of_passer,</span>
+<span id="cb32-50"><a href="#cb32-50" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_is_behind_of_passer) <span class="kw">AS</span> opps_behind_of_passer,</span>
+<span id="cb32-51"><a href="#cb32-51" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_is_left_of_passer) <span class="kw">AS</span> opps_left_of_passer,</span>
+<span id="cb32-52"><a href="#cb32-52" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_is_right_of_passer) <span class="kw">AS</span> opps_right_of_passer,</span>
+<span id="cb32-53"><a href="#cb32-53" aria-hidden="true" tabindex="-1"></a><span class="co">--plus-minus calculation</span></span>
+<span id="cb32-54"><a href="#cb32-54" aria-hidden="true" tabindex="-1"></a><span class="co">-- i.e., team overloads in all directions of the passer</span></span>
+<span id="cb32-55"><a href="#cb32-55" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.TM_is_ahead_of_passer)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_is_ahead_of_passer) <span class="kw">AS</span> team_pm_ahead_of_passer,</span>
+<span id="cb32-56"><a href="#cb32-56" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.TM_is_behind_of_passer)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_is_behind_of_passer) <span class="kw">AS</span> team_pm_behind_of_passer,</span>
+<span id="cb32-57"><a href="#cb32-57" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.TM_is_left_of_passer)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_is_left_of_passer) <span class="kw">AS</span> team_pm_left_of_passer,</span>
+<span id="cb32-58"><a href="#cb32-58" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.TM_is_right_of_passer)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_is_right_of_passer) <span class="kw">AS</span> team_pm_ahead_of_passer,</span>
+<span id="cb32-59"><a href="#cb32-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-60"><a href="#cb32-60" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 5.</span></span>
+<span id="cb32-61"><a href="#cb32-61" aria-hidden="true" tabindex="-1"></a><span class="co">-- for the defensive third</span></span>
+<span id="cb32-62"><a href="#cb32-62" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_in_def_3rd) <span class="kw">AS</span> TMs_in_def_3rd,</span>
+<span id="cb32-63"><a href="#cb32-63" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_in_def_3rd) <span class="kw">AS</span> opps_in_def_3rd,</span>
+<span id="cb32-64"><a href="#cb32-64" aria-hidden="true" tabindex="-1"></a><span class="co">--plus-minus calculation</span></span>
+<span id="cb32-65"><a href="#cb32-65" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_in_def_3rd)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_in_def_3rd) <span class="kw">AS</span> team_pm_def_3rd,</span>
+<span id="cb32-66"><a href="#cb32-66" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.in_def_3rd) <span class="kw">AS</span> tot_in_def_3rd,</span>
+<span id="cb32-67"><a href="#cb32-67" aria-hidden="true" tabindex="-1"></a><span class="co">-- for the midfield third</span></span>
+<span id="cb32-68"><a href="#cb32-68" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_in_mid_3rd) <span class="kw">AS</span> TMs_in_mid_3rd,</span>
+<span id="cb32-69"><a href="#cb32-69" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_in_mid_3rd) <span class="kw">AS</span> opps_in_mid_3rd,</span>
+<span id="cb32-70"><a href="#cb32-70" aria-hidden="true" tabindex="-1"></a><span class="co">--plus-minus calculation</span></span>
+<span id="cb32-71"><a href="#cb32-71" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_in_mid_3rd)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_in_mid_3rd) <span class="kw">AS</span> team_pm_mid_3rd,</span>
+<span id="cb32-72"><a href="#cb32-72" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.in_mid_3rd) <span class="kw">AS</span> tot_in_mid_3rd,</span>
+<span id="cb32-73"><a href="#cb32-73" aria-hidden="true" tabindex="-1"></a><span class="co">-- for the attacking third</span></span>
+<span id="cb32-74"><a href="#cb32-74" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_in_att_3rd) <span class="kw">AS</span> TMs_in_att_3rd,</span>
+<span id="cb32-75"><a href="#cb32-75" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_in_att_3rd) <span class="kw">AS</span> opps_in_att_3rd,</span>
+<span id="cb32-76"><a href="#cb32-76" aria-hidden="true" tabindex="-1"></a><span class="co">--plus-minus calculation</span></span>
+<span id="cb32-77"><a href="#cb32-77" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_in_att_3rd)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_in_att_3rd) <span class="kw">AS</span> team_pm_att_3rd,</span>
+<span id="cb32-78"><a href="#cb32-78" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.in_att_3rd) <span class="kw">AS</span> tot_in_att_3rd,</span>
+<span id="cb32-79"><a href="#cb32-79" aria-hidden="true" tabindex="-1"></a><span class="co">-- for players in proximity to passer</span></span>
+<span id="cb32-80"><a href="#cb32-80" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_in_proximity) <span class="kw">AS</span> TMs_in_proximity,</span>
+<span id="cb32-81"><a href="#cb32-81" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_in_proximity) <span class="kw">AS</span> opps_in_proximity,</span>
+<span id="cb32-82"><a href="#cb32-82" aria-hidden="true" tabindex="-1"></a><span class="co">--plus-minus calculation</span></span>
+<span id="cb32-83"><a href="#cb32-83" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_in_proximity)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_in_proximity) <span class="kw">AS</span> team_pm_proximity,</span>
+<span id="cb32-84"><a href="#cb32-84" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.in_proximity) <span class="kw">AS</span> tot_in_proximity,</span>
+<span id="cb32-85"><a href="#cb32-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-86"><a href="#cb32-86" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 7.</span></span>
+<span id="cb32-87"><a href="#cb32-87" aria-hidden="true" tabindex="-1"></a><span class="co">-- for players in halfspace</span></span>
+<span id="cb32-88"><a href="#cb32-88" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_in_half_space) <span class="kw">AS</span> TMs_in_half_space,</span>
+<span id="cb32-89"><a href="#cb32-89" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_in_half_space) <span class="kw">AS</span> opps_in_half_space,</span>
+<span id="cb32-90"><a href="#cb32-90" aria-hidden="true" tabindex="-1"></a><span class="co">--plus-minus calculation</span></span>
+<span id="cb32-91"><a href="#cb32-91" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_in_half_space)<span class="op">-</span> <span class="fu">SUM</span>(Z.opp_in_half_space) <span class="kw">AS</span> team_pm_half_space,</span>
+<span id="cb32-92"><a href="#cb32-92" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.in_half_space) <span class="kw">AS</span> tot_in_half_space,</span>
+<span id="cb32-93"><a href="#cb32-93" aria-hidden="true" tabindex="-1"></a><span class="co">-- for players in front of attacking box</span></span>
+<span id="cb32-94"><a href="#cb32-94" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_in_front_of_box) <span class="kw">AS</span> TMs_in_front_of_box,</span>
+<span id="cb32-95"><a href="#cb32-95" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_in_front_of_box) <span class="kw">AS</span> opps_in_front_of_box,</span>
+<span id="cb32-96"><a href="#cb32-96" aria-hidden="true" tabindex="-1"></a><span class="co">--plus-minus calculation</span></span>
+<span id="cb32-97"><a href="#cb32-97" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_in_front_of_box)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_in_front_of_box) <span class="kw">AS</span> team_pm_in_front_of_box,</span>
+<span id="cb32-98"><a href="#cb32-98" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.in_front_of_box) <span class="kw">AS</span> tot_in_front_of_box,</span>
+<span id="cb32-99"><a href="#cb32-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-100"><a href="#cb32-100" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 8.</span></span>
+<span id="cb32-101"><a href="#cb32-101" aria-hidden="true" tabindex="-1"></a><span class="co">-- for players out wide totally</span></span>
+<span id="cb32-102"><a href="#cb32-102" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_is_out_wide) <span class="kw">AS</span> TMs_is_out_wide,</span>
+<span id="cb32-103"><a href="#cb32-103" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_is_out_wide) <span class="kw">AS</span> opps_is_out_wide,</span>
+<span id="cb32-104"><a href="#cb32-104" aria-hidden="true" tabindex="-1"></a><span class="co">--plus-minus calculation</span></span>
+<span id="cb32-105"><a href="#cb32-105" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_is_out_wide)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_is_out_wide) <span class="kw">AS</span> team_pm_is_out_wide,</span>
+<span id="cb32-106"><a href="#cb32-106" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.is_out_wide) <span class="kw">AS</span> tot_is_out_wide,</span>
+<span id="cb32-107"><a href="#cb32-107" aria-hidden="true" tabindex="-1"></a><span class="co">-- for players out wide left</span></span>
+<span id="cb32-108"><a href="#cb32-108" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_is_out_wide_left) <span class="kw">AS</span> TMs_is_out_wide_left,</span>
+<span id="cb32-109"><a href="#cb32-109" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_is_out_wide_left) <span class="kw">AS</span> opps_is_out_wide_left,</span>
+<span id="cb32-110"><a href="#cb32-110" aria-hidden="true" tabindex="-1"></a><span class="co">--plus-minus calculation</span></span>
+<span id="cb32-111"><a href="#cb32-111" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_is_out_wide_left)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_is_out_wide_left) <span class="kw">AS</span> team_pm_is_out_wide_left,</span>
+<span id="cb32-112"><a href="#cb32-112" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.is_out_wide_left) <span class="kw">AS</span> tot_is_out_wide_left,</span>
+<span id="cb32-113"><a href="#cb32-113" aria-hidden="true" tabindex="-1"></a><span class="co">-- for players out wide right</span></span>
+<span id="cb32-114"><a href="#cb32-114" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_is_out_wide_right) <span class="kw">AS</span> TMs_is_out_wide_right,</span>
+<span id="cb32-115"><a href="#cb32-115" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_is_out_wide_right) <span class="kw">AS</span> opps_is_out_wide_right,</span>
+<span id="cb32-116"><a href="#cb32-116" aria-hidden="true" tabindex="-1"></a><span class="co">--plus-minus calculation</span></span>
+<span id="cb32-117"><a href="#cb32-117" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_is_out_wide_right)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_is_out_wide_right) <span class="kw">AS</span> team_pm_is_out_wide_right,</span>
+<span id="cb32-118"><a href="#cb32-118" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.is_out_wide_right) <span class="kw">AS</span> tot_is_out_wide_right,</span>
+<span id="cb32-119"><a href="#cb32-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-120"><a href="#cb32-120" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 9.</span></span>
+<span id="cb32-121"><a href="#cb32-121" aria-hidden="true" tabindex="-1"></a><span class="co">-- for players in the attacking box</span></span>
+<span id="cb32-122"><a href="#cb32-122" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_is_in_box) <span class="kw">AS</span> TMs_is_in_box,</span>
+<span id="cb32-123"><a href="#cb32-123" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.opp_is_in_box) <span class="kw">AS</span> opps_is_in_box,</span>
+<span id="cb32-124"><a href="#cb32-124" aria-hidden="true" tabindex="-1"></a><span class="co">--plus-minus calculation</span></span>
+<span id="cb32-125"><a href="#cb32-125" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.team_is_in_box)<span class="op">-</span><span class="fu">SUM</span>(Z.opp_is_in_box) <span class="kw">AS</span> team_pm_is_in_box,</span>
+<span id="cb32-126"><a href="#cb32-126" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.is_in_box) <span class="kw">AS</span> tot_is_in_box,</span>
+<span id="cb32-127"><a href="#cb32-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-128"><a href="#cb32-128" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 10.</span></span>
+<span id="cb32-129"><a href="#cb32-129" aria-hidden="true" tabindex="-1"></a><span class="co">-- the number of opponents applying pressure to the passer</span></span>
+<span id="cb32-130"><a href="#cb32-130" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(Z.pressuring_passer) <span class="kw">AS</span> tot_presses_on_passer</span>
+<span id="cb32-131"><a href="#cb32-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-132"><a href="#cb32-132" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> zonewise_metrics Z</span>
+<span id="cb32-133"><a href="#cb32-133" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> Z.GameEventID</span>
+<span id="cb32-134"><a href="#cb32-134" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb32-135"><a href="#cb32-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-136"><a href="#cb32-136" aria-hidden="true" tabindex="-1"></a><span class="co">-- CTE for aggregate measures of valid passing options from teammate_metrics</span></span>
+<span id="cb32-137"><a href="#cb32-137" aria-hidden="true" tabindex="-1"></a>T3 <span class="kw">AS</span>(</span>
+<span id="cb32-138"><a href="#cb32-138" aria-hidden="true" tabindex="-1"></a><span class="co">-- for joining to tables in subsequent steps</span></span>
+<span id="cb32-139"><a href="#cb32-139" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> T.GameEventID <span class="kw">as</span> GID_T, </span>
+<span id="cb32-140"><a href="#cb32-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-141"><a href="#cb32-141" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 11.</span></span>
+<span id="cb32-142"><a href="#cb32-142" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(T.isMarked) <span class="kw">as</span> tot_marked_teammates,</span>
+<span id="cb32-143"><a href="#cb32-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-144"><a href="#cb32-144" aria-hidden="true" tabindex="-1"></a><span class="co">-- Feature 12.</span></span>
+<span id="cb32-145"><a href="#cb32-145" aria-hidden="true" tabindex="-1"></a><span class="fu">SUM</span>(T.valid_passing_option) <span class="kw">as</span> total_passing_options</span>
+<span id="cb32-146"><a href="#cb32-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-147"><a href="#cb32-147" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> teammate_metrics T</span>
+<span id="cb32-148"><a href="#cb32-148" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> T.GameEventID</span>
+<span id="cb32-149"><a href="#cb32-149" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb32-150"><a href="#cb32-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-151"><a href="#cb32-151" aria-hidden="true" tabindex="-1"></a><span class="co">-- Joining T2 with T3</span></span>
+<span id="cb32-152"><a href="#cb32-152" aria-hidden="true" tabindex="-1"></a>T4 <span class="kw">AS</span> (</span>
+<span id="cb32-153"><a href="#cb32-153" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb32-154"><a href="#cb32-154" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> T2 <span class="kw">JOIN</span> T3 <span class="kw">ON</span> T2.GID_Z<span class="op">=</span>T3.GID_T</span>
+<span id="cb32-155"><a href="#cb32-155" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb32-156"><a href="#cb32-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-157"><a href="#cb32-157" aria-hidden="true" tabindex="-1"></a><span class="co">-- Joining T1 with T4</span></span>
+<span id="cb32-158"><a href="#cb32-158" aria-hidden="true" tabindex="-1"></a><span class="co">-- to get the full dataset</span></span>
+<span id="cb32-159"><a href="#cb32-159" aria-hidden="true" tabindex="-1"></a>T5 <span class="kw">AS</span> (</span>
+<span id="cb32-160"><a href="#cb32-160" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> </span>
+<span id="cb32-161"><a href="#cb32-161" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> T1 <span class="kw">JOIN</span> T4 <span class="kw">ON</span> T1.GameEventID<span class="op">=</span>T4.GID_T</span>
+<span id="cb32-162"><a href="#cb32-162" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-163"><a href="#cb32-163" aria-hidden="true" tabindex="-1"></a><span class="co">-- note that we need to drop the GID_Z and GID_T columns since they are duplicates. I will do so after creating table</span></span>
+<span id="cb32-164"><a href="#cb32-164" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> T5;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note that I have two duplicates of the GameEventID columns, <code>GID_Z and GID_T</code> which I used for joining. I go ahead and drop them below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> feature_label_full_stats</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">COLUMN</span> GID_Z;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> feature_label_full_stats</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">COLUMN</span> GID_T;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Running a final check for the column (not displayed due to space constraint)…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>PRAGMA table_info(feature_label_full_stats);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>and disconnecting the connection to <code>TD.sqlite</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(<span class="at">conn=</span>TD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<!-- If there is an attacking overload in the box, there should exist atleast one pass option that can have a decent shot at goal -->
+<!-- I cannot judge the characteristics of the pass, nor do I know the destination coordinates of the pass. -->
+<!-- 1.  angle of passer wrt goalmouth (Get only passer angle to goalmouth once joined to events dataset) (Done) -->
+<!-- 2.  origin zone (make zone in raw data) -->
+<!-- 3.  No. of players in defensive third (Done) -->
+<!-- 4.  No. of players in Midfield third (Done) -->
+<!-- 5.  No. of players in attacking third (Done) -->
+<!-- 6.  total number of players in close proximity (define \<= 5 meters as proximal) -->
+<!-- 7.  teammates in proximity -->
+<!-- 8.  opponents in proximity (total - teammates) -->
+<!-- 9.  Number of safe passing options (if opponent in line with potential destination) -->
+<!-- 10. number of passing options forward (i.e, number of teammates forward whose passing lanes are not blocked) -->
+<!-- 11. number of passing options backward -->
+<!-- 12. distance to goal (Done) -->
+<!-- 13. number of safe passing options in attacking half-spaces -->
+<!-- 14. Expected number of Own-team players in attacking third -->
+<!-- 15. Expected number of opposing players in attacking third -->
+<!-- 16. Expectation +/- for number of players in attacking third -->
+<!-- and more. -->
+<!-- Write the SQL equivalents of the queries as and when possible, and complie all into one single SQL query at the end. -->
+<!-- Visualise the shot locations and boxes using ggsoccer if possible, run simple logistic regression if time permits. -->
+<!-- x = \[-55.3, 55.3\] -->
+<!-- y= \[-36.8, 36.8\] -->
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
